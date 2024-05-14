@@ -287,7 +287,11 @@
         data = [body dataUsingEncoding:NSUTF8StringEncoding];
     }
 
-    [NewRelic noticeNetworkRequestForURL:nsurl httpMethod:method startTime:[startTime doubleValue] endTime:[endTime doubleValue] responseHeaders:nil statusCode:(long)[status integerValue] bytesSent:(long)[bytesSent integerValue] bytesReceived:(long)[bytesreceived integerValue] responseData:data traceHeaders:traceAttributes andParams:params];
+    @try {
+        [NewRelic noticeNetworkRequestForURL:nsurl httpMethod:method startTime:[startTime doubleValue] endTime:[endTime doubleValue] responseHeaders:nil statusCode:(long)[status integerValue] bytesSent:(long)[bytesSent integerValue] bytesReceived:(long)[bytesreceived integerValue] responseData:data traceHeaders:traceAttributes andParams:params];
+    } @catch (NSException * e) {
+        
+    } 
 }
 
 - (void)crashNow:(CDVInvokedUrlCommand *)command {

@@ -1,5 +1,8 @@
 # Changelog
 
+# unreleased
+* Add try/catch block to prevent app crash when image is uploaded
+
 # 6.2.9
 * A crash issue in the iOS app has been resolved when the Cordova agent receives responses in the form of blobs or array buffers.
 * The native iOS agent has been updated to version 7.4.11, which brings performance enhancements and bug fixes.
