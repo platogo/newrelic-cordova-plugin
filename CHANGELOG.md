@@ -2,6 +2,7 @@
 
 # unreleased
 * Add try/catch block to prevent app crash when image is uploaded
+* Add check and default value assignation to `error.stack` in `recordError` to prevent crash in iOS due to `error.stack` being undefined
 
 # 6.2.9
 * A crash issue in the iOS app has been resolved when the Cordova agent receives responses in the form of blobs or array buffers.
