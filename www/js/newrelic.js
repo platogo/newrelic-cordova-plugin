@@ -162,7 +162,7 @@
                 }
 
                 if (error !== undefined) {
-                    if (!!error.stack) {
+                    if (!error.stack) {
                       error.stack = ""
                     }
                     cordova.exec(cb, fail, "NewRelicCordovaPlugin", "recordError", [error.name, error.message, error.stack, false, errorAttributes]);
