@@ -161,10 +161,7 @@
                     error = new Error(err || '');
                 }
 
-                if (error !== undefined) {
-                    if (!error.stack) {
-                      error.stack = ""
-                    }
+                if (error?.stack) {
                     cordova.exec(cb, fail, "NewRelicCordovaPlugin", "recordError", [error.name, error.message, error.stack, false, errorAttributes]);
                 } else {
                     window.console.warn('Undefined error in NewRelic.recordError');
